@@ -1,0 +1,12 @@
+<div class="logForm pull-right">
+  <input class="form-control col-sm-1" type="text" placeholder="Email" ng-model="vm.email">
+  <br><br>
+  <input class="form-control" type="password" placeholder="Password" ng-model="vm.password">
+  <br>
+  <button id="modal-but" class="btn btn-success" ng-click="vm.login()">Log In</button>
+  <!-- <button class="btn btn-danger" , data-dismiss="modal" aria-label="Close">Cancel</button> -->
+  <br>
+  <div ng-show="vm.errors">
+    {{vm.errors}}
+  </div>
+</div>

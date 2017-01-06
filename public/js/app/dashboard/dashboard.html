@@ -1,0 +1,20 @@
+
+<h1 style="margin-left: 30px">Hello, {{vm.user.name}}</h1>
+
+<br>
+
+
+
+
+<ul class="list-group profileList">
+  <h3>My Profile</h3>
+  <li class="list-group-item">Name: <strong>{{vm.user.name}}</strong></li>
+  <li class="list-group-item">Email: <strong>{{vm.user.email}}</strong></li>
+  <li class="list-group-item">Phone: <strong>{{vm.user.instrument}}</strong></li>
+  <li class="list-group-item">Address: <strong>{{vm.user.genre}}</strong></li>
+  <li class="list-group-item">Bio: <strong>{{vm.user.bio}}</strong></li>
+  <li ng-show="vm.isBusiness()" class="list-group-item">Price per Lesson: <strong>{{vm.user.price_per_lesson}}</strong></li>
+  <li ng-show="vm.isBusiness()" class="list-group-item">Length per Lesson: <strong>{{vm.user.length_per_lesson}}</strong></li>
+  <br>
+  <a ui-sref="{{vm.isBusiness() ? 'edit-business' : 'edit-business'}}" class="btn btn-warning animated fadeIn">Edit Profile</a>
+</ul>

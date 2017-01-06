@@ -1,0 +1,50 @@
+<h2 class="splash">Edit Business</h2>
+<form>
+<div class="form-group row">
+  <div class="col-xs-6">
+    <input ng-model="vm.editingUser.name" class="form-control" type="text" placeholder="Name"  id="example-text-input">
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-xs-6">
+    <input ng-model="vm.editingUser.email" class="form-control" placeholder="Email" type="email" id="example-search-input">
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-xs-6">
+    <input ng-model="vm.editingUser.password" placeholder="Password" class="form-control" type="password" id="example-email-input">
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-xs-6">
+  <label for="exampleInputPassword1">Level</label>
+    <select ng-model="vm.editingUser.level" class="form-control" id="example-url-input">
+      <option class="form-control" value="beginner">Beginner</option>
+      <option class="form-control" value="intermediate">Intermediate</option>
+      <option class="form-control" value="advanced">Advanced</option>
+    </select>
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-xs-6">
+    <input ng-model="vm.editingUser.genre" class="form-control" placeholder="Genre" type="text"id="example-number-input">
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-xs-6">
+    <input ng-model="vm.editingUser.instrument" class="form-control" placeholder="Instrument" type="text" id="example-datetime-local-input">
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-xs-6">
+    <textarea ng-model="vm.editingUser.videos" class="form-control" placeholder="Videos" type="text" id="example-date-input"></textarea>
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-xs-6">
+    <textarea ng-model="vm.editingUser.bio" class="form-control" placeholder="Bio" id="exampleTextarea" rows="3"></textarea>
+  </div>
+</div>
+<button ng-click="vm.updateBusiness()" id="form-but" type="submit" class="btn btn-info">Submit</button>
+<a ui-sref="'dashboard" class="btn btn-danger">Cancel</a>
+</form>

@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <title>Swipes</title>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+</head>
+<body ng-controller="LoginController as authCtrl">
+  <nav class="navbar navbar-light bg-faded">
+    <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" ui-sref="home">Swipes</a>
+    </div>
+    <ul class="nav navbar-nav pull-right">
+    <!-- fix route change home tab -->
+      <li class="active"><a class="active" ui-sref="about">About</a></li>
+      <li class="active" ng-show="authCtrl.getUser()"><a class="active" ui-sref="dashboard">My Profile</a></li>
+      <li class="active"><a class="active" ui-sref="form-business">New Business</a></li>
+      <li class="active" ng-show="authCtrl.getUser()"><a class="active" ui-sref="search">Find Businesses</a></li>
+<!--       <li class="active" ng-show="authCtrl.getUser()"><a class="active" ui-sref="lesson">Lesson Room</a></li> -->
+      <li class="active" ng-hide="authCtrl.getUser()"><a class="active" ui-sref="login">Login</a></li>
+      <li class="active" ng-show="authCtrl.getUser()"><a class="active" href="#" ng-click="authCtrl.logout()">Logout</a></li>
+      <li>{{authCtrl.getUser().name}}</li>
+ </ul>
+  </div>
+  </nav>
+  <main class="content" ui-view></main>
+
+
+  <script src="js/app/app.module.js"></script>
+  <script src="js/app/app.routes.js"></script>
+  <script src="js/app/services/auth.interceptor.js"></script>
+  <script src="js/app/services/auth.token.service.js"></script>
+  <script src="js/app/services/auth.config.js"></script>
+  <script src="js/app/services/user.service.js"></script>
+  <script src="js/app/services/businesses.service.js"></script>
+  <script src="js/app/login/login.controller.js"></script>
+  <script src="js/app/dashboard/dashboard.controller.js"></script>
+  <script src="js/app/new/business.controller.js"></script>
+  <script src="js/app/edit/edit.business.controller.js"></script>
+</body>
+</html>
